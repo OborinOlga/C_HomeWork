@@ -6,11 +6,11 @@ int number2 = Convert.ToInt32(Console.ReadLine());
 
 if (number1 > number2)
 {
-    Console.WriteLine($"Наибольшее число = {number1}");
+    Console.WriteLine($"Наибольшее число = {number1}, наименьшее число = {number2}");
 }
 else if (number1 < number2)
 {
-    Console.WriteLine($"Наибольшее число = {number2}");
+    Console.WriteLine($"Наибольшее число = {number2}, наименьшее число = {number1}");
 }
 else
 {
