@@ -3,16 +3,19 @@ Console.WriteLine("Введите первое натуральное число
 int number = Convert.ToInt32(Console.ReadLine());
 
 if (number < 0) number *= -1;
-// if (number = 0)
-// {
-//     Console.WriteLine("Число не является ни чётным, ни нечётным");
-// };
-
-if (number%2 ==1)
+if (number == 0)
 {
-    Console.WriteLine("Число является нечётным");
+    Console.WriteLine("Число не является ни чётным, ни нечётным");
 }
+
 else
 {
-    Console.WriteLine("Число является чётным");
+    if (number%2 ==1)
+    {
+        Console.WriteLine("Число является нечётным");
+    }
+    else
+    {
+        Console.WriteLine("Число является чётным");
+    }
 }
