@@ -9,9 +9,24 @@ int secondDigit = number % 10;
 
 if ( firstDigit >= secondDigit) 
 {
-    Console.Write(firstDigit);
+    Console.WriteLine($"  Наибольшая цифра числа -> {firstDigit}");
 }
 else 
 {
-    Console.WriteLine(secondDigit);
+    Console.WriteLine($"  Наибольшая цифра числа -> {secondDigit}");
 }
+
+int result = firstDigit > secondDigit ? firstDigit : secondDigit;
+Console.WriteLine($"  Наибольшая цифра числа -> {result}");
+
+
+int MaxDigit(int num)
+{
+    int firstDigit = num / 10;
+    int secondDigit = num % 10;
+    int result = firstDigit > secondDigit ? firstDigit : secondDigit;
+    return result;
+}
+
+int maxDigit = MaxDigit(number); // num = number
+Console.WriteLine($"  Наибольшая цифра числа -> {maxDigit}");
