@@ -13,7 +13,7 @@ int FirstThirdDigit (int num)
 {
 int firstDigit = num / 100;
 int thirdDigit = num % 10;
-int Num = 10*firstDigit + thirdDigit;
+int newNum = 10*firstDigit + thirdDigit;
 return newNum;
 }
 

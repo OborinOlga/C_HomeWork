@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 int BigNumber (int num)
 {
     int newNum = num / 10;
