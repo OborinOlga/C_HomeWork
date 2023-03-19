@@ -1,53 +1,31 @@
 ﻿//  Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
-Console.WriteLine("Введите первое целое число:  ");
-int number1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе целое число:  ");
-int number2 = Convert.ToInt32(Console.ReadLine());
-
-// if (number1 >= number2)
-// {
-//     if (number1 % number2 == 0)
-//     {
-//         Console.WriteLine("Первое число кратно второму");
-//     }
-//     else
-//     {
-//         while (number1 > number2)
-//         {
-//             number1 = number1 - number2;
-//         }
-//         Console.WriteLine($"Остаток от деления = {number1}");
-//     }
-// }
-// else
-// {
-//     Console.WriteLine("Первое число меньше второго");
-// }
-
-// 2й способ
-// int result = number1%number2;
-// if (result==0)
-// {
-//      Console.WriteLine("Кратно");
-// }
-// else
-// {
-//      Console.WriteLine($"Не кратно, остаток от деления = {result}");
-// }
-
-// 3й способ и использованием методов
-int Multiple (int num1, int num2)
+// Метод
+int SecondDigit (int num)
 {
-    return num1%num2;
+    int firstDigit = num/100;
+    int thirdDigit = num%10;
+    int SecondNum = (num - firstDigit*100 - thirdDigit)/10;
+    return SecondNum;
 }
 
-int result = Multiple (number1, number2);
-if (result == 0)
+Console.WriteLine("Введите натуральное трёхзначное число:  ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+if (99 < number)
 {
-    Console.WriteLine ("Кратно");
+     if (number < 1000)
+     {
+        int secondDigit = SecondDigit(number);
+        Console.WriteLine($"Вторая цифра числа: {secondDigit}");
+     }
+    else 
+     {
+        Console.WriteLine("Число не соответствует критерию - трёхзначность");
+     }
 }
 else
 {
-    Console.WriteLine ($"Не кратно, остаток от деления = {result}");
+    Console.WriteLine("Число не соответствует критерию - трёхзначность");
 }
+
