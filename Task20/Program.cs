@@ -1,26 +1,30 @@
-﻿//  Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-// 14212 -> нет
-// 12821 -> да
-// 23432 -> да
+﻿//  напините прогграмму, которая принимает на вход координаты двух точек и находит 
+// расстояние между ними в 2-хмерном пространстве
 
-// 1-й способ 
+Console.WriteLine("Введите координаты первой точки");
+Console.Write("х =");
+int xCoor1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("y =");
+int yCoor1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координаты второй точки");
+Console.Write("х =");
+int xCoor2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("y =");
+int yCoor2 = Convert.ToInt32(Console.ReadLine());
 
-bool Pal (int num)
+
+int quadro = (xCoor1 - xCoor2)*(xCoor1 - xCoor2) + (yCoor1 - yCoor2)*(yCoor1 - yCoor2);
+double length = Math.Sqrt(quadro);
+double lengthRound = Math.Round(length, 2, MidpointRounding.ToZero);
+
+Console.WriteLine($"Расстояние между двумя точками равно = {lengthRound}");
+
+// 2й способ с использованием методов
+
+double Length(int x1, int y1, int x2, int y2)
 {
-    return num%10 == num/10000%10 && num/10%10 == num/1000%10;
+    return Math.Sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
 }
 
-Console.WriteLine("Введите натуральное пятизначное число:  ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-if (number < 100000 && number > 9999)
-{
-    bool pal = Pal(number);
-    Console.WriteLine(pal ? "Число является палиндромом" : "Нет, данное число не палиндром");
-}
-else
-{
-    Console.WriteLine("Число не является пятизначным");
-}
-
-
+double length1 = Length(xCoor1, yCoor1,  xCoor2,  yCoor2);
+Console.WriteLine(Math.Round(length1, 2, MidpointRounding.ToZero));
