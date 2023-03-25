@@ -14,7 +14,7 @@ int Degree (int x, int y)
 Console.WriteLine("Введите два числа");
 Console.Write("Основание степни А = ");
 int numX = Convert.ToInt32(Console.ReadLine());
-Console.Write("Степень - Натуральное число В = ");
+Console.Write("Степень - натуральное число В = ");
 int numY = Convert.ToInt32(Console.ReadLine());
 
 int degree = Degree(numX, numY);
