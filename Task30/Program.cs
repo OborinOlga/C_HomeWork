@@ -2,11 +2,11 @@
 
 
 int[] array = new int[8];
-FillArray (array);
+FillArray(array);
 PrintArray(array);
 
 
-void FillArray (int [] arr)
+void FillArray(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
@@ -14,10 +14,10 @@ void FillArray (int [] arr)
     }
 }
 
-void PrintArray (int [] arr)
+void PrintArray(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(arr[i]);
+        Console.Write(arr[i]+" ");
     }
 }
