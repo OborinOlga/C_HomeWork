@@ -2,15 +2,6 @@
 // которая покажет количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
-// ВВод числа с экрана
-int Prompt (string message)
-{
-    Console.Write(message);
-    string ReadInput = System.Console.ReadLine();
-    int result = int.Parse(ReadInput);
-    return result;
-}
-
 // Метод заполнения массива
 int [] FillArray (int Length)
 {
@@ -36,18 +27,18 @@ void PrintArray (int[] arr)
 }
 
 // Метод подсчета четных чисел в массиве
-int QuantityEvenNumber(int[] arr)
+int HowManyEvenNumber(int[] arr)
 {
+    int count=0;
     for (int i= 0; i <= arr.Length-1; i++)  
     {
-        int result=0;
-        if (arr[i]%2 ==0) result=result+1;
-        else result=result;
+        if (arr[i]%2 ==0) count++;
     }
+    return count;
 }
 
-
-int length = Prompt("Введите длину массива: ");
+Console.WriteLine("Введите длину массива: ");
+int length = Convert.ToInt32(Console.ReadLine());
 int[] array = FillArray(length);
 PrintArray(array);
-Console.WriteLine($"В данном массиве количество чётных чисел = {QuantityEvenNumber[array]}");
+Console.WriteLine($"В данном массиве количество чётных чисел = {HowManyEvenNumber(array)}");
