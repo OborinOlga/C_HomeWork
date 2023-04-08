@@ -3,11 +3,11 @@
 // [345, 897, 568, 234] -> 2
 
 // Метод заполнения массива
-int [] FillArray (int Length)
+int [] FillArray (int size)
 {
-    int[] arr = new int[Length];
+    int[] arr = new int[size];
     Random rand = new Random();
-    for (int i = 0; i < Length; i++)
+    for (int i = 0; i < size; i++)
     {
         arr[i] =rand.Next(100, 1000);
     }
@@ -17,20 +17,20 @@ int [] FillArray (int Length)
 // Метод вывода массива на экран
 void PrintArray (int[] arr)
 {   
-    System.Console.Write("[");
+    Console.Write("[");
     for (int i = 0; i < arr.Length-1; i++)
     {
-        System.Console.Write($"{arr[i]}, ");
+        Console.Write($"{arr[i]}, ");
     }
-    System.Console.Write($"{arr[arr.Length-1]}");
-    System.Console.WriteLine("]");
+    Console.Write(arr[arr.Length-1]);
+    Console.WriteLine("]");
 }
 
 // Метод подсчета четных чисел в массиве
-int HowManyEvenNumber(int[] arr)
+int HowManyEvenNumbers(int[] arr)
 {
     int count=0;
-    for (int i= 0; i <= arr.Length-1; i++)  
+    for (int i= 0; i < arr.Length; i++)  
     {
         if (arr[i]%2 ==0) count++;
     }
@@ -41,4 +41,4 @@ Console.WriteLine("Введите длину массива: ");
 int length = Convert.ToInt32(Console.ReadLine());
 int[] array = FillArray(length);
 PrintArray(array);
-Console.WriteLine($"В данном массиве количество чётных чисел = {HowManyEvenNumber(array)}");
+Console.WriteLine($"В данном массиве количество чётных чисел = {HowManyEvenNumbers(array)}");
