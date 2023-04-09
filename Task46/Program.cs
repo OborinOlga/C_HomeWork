@@ -2,17 +2,6 @@
 // m = 3, n = 4.
 
 
-// void FillArray(int[,] matr)
-// {
-//     for (int i=0; i<matr.GetLength(0); i++)
-//     {
-//         for (int j=0; j<matr.GetLength(1); j++)
-//         {
-//             matr[i,j]= new Random().Next(0, 10);
-//         }
-//     }
-// }
-
 // void PrintArray(int[,] matr)
 // {
 //     for (int i=0; i<matr.GetLength(0); i++)
@@ -33,7 +22,7 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns]; // 0, 1
 
-    Random rnd = new Random();
+    Random rand = new Random();
 
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
