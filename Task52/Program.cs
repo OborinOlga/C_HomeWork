@@ -60,3 +60,17 @@ int maxValue = Convert.ToInt32(Console.ReadLine());
 int[,] array2d = CreateMatrixRndInt(mRows, nColumns, minValue, maxValue);
 PrintMatrix(array2d);
 AverageColumnsMatrix (array2d);
+
+
+
+numbers [2, 5, 13, 7, 6, 4]
+size = 6
+sum =0
+avg = 0
+index = 0
+while index < size do
+      sum = sum + number[index]
+      index = index + 1
+else 
+      avg = sum / size
+Print (avg)
