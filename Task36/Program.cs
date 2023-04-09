@@ -34,8 +34,6 @@ int SummNumbersOnOddPozition (int[] arr)
     return sum;
 }
 
-
-
 Console.WriteLine("Ввведите длину массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
 int[] array = FillArray(size);
