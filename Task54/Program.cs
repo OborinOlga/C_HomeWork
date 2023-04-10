@@ -30,25 +30,53 @@ void PrintMatrix(int[,] matrix)
     {
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
-            {
-                Console.Write($"{matrix[i, j], 5} ");
-            }
-            Console.WriteLine("|");
+        {
+            Console.Write($"{matrix[i, j],5} ");
+        }
+        Console.WriteLine("|");
     }
 }
 
-void ChangeFirstLastRows (int [,] matrix)
+// static void BubbleSort(int[] inArray)
+// {
+//     for (int i = 0; i < inArray.Length; i++)
+//         for (int j = 0; j < inArray.Length - i - 1; j++)
+//         {
+//             if (inArray[j] > inArray[j + 1])
+//             {
+//                 int temp = inArray[j];
+//                 inArray[j] = inArray[j + 1];
+//                 inArray[j + 1] = temp;
+//             }
+//         }
+// }
+
+
+
+
+//тот же метод пузырька
+void BubbleSort(int[,] matrix)
 {
-    for (int i = 0; j < matrix.GetLength(0); j++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        void BubbleSort(int[,] matrix)
         {
-            int temp = 0;
-            if (matrix[i, j+1] > matrix[i, j]) temp = matrix[i, j] ;
-            matrix[i, j] = matrix[i, j+1];
-        }      
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+                {
+                    if (matrix[i, j] > matrix[i, j + 1])
+                    {
+                        int temp = matrix[i, j];
+                        matrix[i, j] = matrix[i, j + 1];
+                        matrix[i, j + 1] = temp;
+                    }
+                }
+            }
+        }
     }
+}
+
 
 Console.Write("Введите размерность cтрок в массиве m: ");
 int mRows = Convert.ToInt32(Console.ReadLine());
@@ -60,7 +88,11 @@ Console.Write("Введите максимальное значение элем
 int maxValue = Convert.ToInt32(Console.ReadLine());
 int[,] array2d = CreateMatrixRndInt(mRows, nColumns, minValue, maxValue);
 PrintMatrix(array2d);
-ChangeFirstLastRows (array2d);
 Console.WriteLine();
+for (int i = 0; i < matrix.GetLength(0); i++)
+{
+    intArray[i] = int.Parse(nums[i]);
+}
+BubbleSort(array2d);
 PrintMatrix(array2d);
 
