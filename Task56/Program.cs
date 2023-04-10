@@ -35,19 +35,31 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[] FindMinRowMatrix (int [,] matrix)
+int[] ArraySumElementsOnRows (int [,] matrix, int rows)
 {
-    //int[] row = 0;
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    int[] arrSum = new int[rows];
+    for (int i=0; i < rows; i++)
     {
-        int[] row = new int[];
-        // double sum = 0;
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            row[i] = row[i] + matrix[i, j];
+            arrSum[i] = arrSum[i] + matrix[i, j];
+            
         }
+        // Console.Write ($" {arrSum[i]}, ");
     } 
+    return arrSum;
  }
+
+void FindMin (int[] arr)
+{
+    //int min = 0;
+    int minPoz = 1;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] < arr[minPoz])  minPoz = i+1;
+    }
+    Console.WriteLine($"Наименьшая сумма элементов расположена в {minPoz}-ой стоке");
+} 
 
 Console.Write("Введите размерность cтрок в прямоугольном массиве m: ");
 int mRows = Convert.ToInt32(Console.ReadLine());
@@ -59,6 +71,6 @@ Console.Write("Введите максимальное значение элем
 int maxValue = Convert.ToInt32(Console.ReadLine());
 int[,] array2d = CreateMatrixRndInt(mRows, nColumns, minValue, maxValue);
 PrintMatrix(array2d);
-FindMinRowMatrix(array2d);
-Console.WriteLine();
-PrintMatrix(array2d);
+int[] array = ArraySumElementsOnRows(array2d, mRows);
+FindMin(array);
+
