@@ -5,11 +5,17 @@
 
 Console.Write("Введите натуральное число N: ");
 int number = Convert.ToInt32(Console.ReadLine());
+Console.Write($"'");
 ReserveNaturalNumbers (number);
+Console.Write("'");
 
 void ReserveNaturalNumbers (int num)
 {
-    Console.Write($"{num} ");
+    Console.Write(num);
     if (num==1) return;
+    Console.Write(", ");
     ReserveNaturalNumbers (num-1);
-}  
+    
+    
+}
+   
