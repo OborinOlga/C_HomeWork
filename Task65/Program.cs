@@ -1,24 +1,26 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
+// M = 1; N = 5 -> "1, 2, 3, 4, 5"
+// M = 4; N = 8 -> "4, 5, 6, 7, 8"
 Console.Write("Введите натуральное число M: ");
 int numberM = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите натуральное число N: ");
 int numberN = Convert.ToInt32(Console.ReadLine());
-SummNumbersBetween(numberM, numberN);
+NumbersFromTillUp(numberM, numberN);
 
 
-void SummNumbersBetween(int M, int N)
+void NumbersFromTillUp(int M, int N)
 {
     if (M>N)
     {
-        SummNumbersBetween(M-1, N);
+        NumbersFromTillUp(M-1, N);
         Console.Write ($"{M} ");
     }
-    if (M<N)
+    else if (M<N)
     {
-        SummNumbersBetween(M, N-1);
+        NumbersFromTillUp(M, N-1);
         Console.Write ($"{N} ");
     }
-    if (M==N)
+    else
     {
         Console.Write ($"{N} ");
     }
