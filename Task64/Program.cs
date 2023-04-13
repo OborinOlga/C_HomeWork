@@ -9,13 +9,18 @@ Console.Write($"'");
 ReserveNaturalNumbers (number);
 Console.Write("'");
 
+
+
 void ReserveNaturalNumbers (int num)
 {
-    Console.Write(num);
-    if (num==1) return;
-    Console.Write(", ");
-    ReserveNaturalNumbers (num-1);
-    
+    if  (num>0)
+    {
+        Console.Write(num);
+        if (num==1) return;
+        Console.Write(", ");
+        ReserveNaturalNumbers (num-1);
+    }
+    Console.Write("Число введено не верно");
     
 }
    
